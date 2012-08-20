@@ -3,9 +3,9 @@
 # ----------------------- #
 
 url: http://emrekutlu.github.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+title: Railstic
+subtitle: sharing experiences
+author: İ. Emre Kutlu
 simple_search: http://google.com/search
 description:
 
@@ -27,7 +27,7 @@ email:
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
 root: /
-permalink: /blog/:year/:month/:day/:title/
+permalink: /:year/:month/:title/
 source: source
 destination: public
 plugins: plugins
@@ -64,7 +64,7 @@ github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
+twitter_user: iekutlu
 twitter_tweet_count: 4
 twitter_show_replies: false
 twitter_follow_button: true
