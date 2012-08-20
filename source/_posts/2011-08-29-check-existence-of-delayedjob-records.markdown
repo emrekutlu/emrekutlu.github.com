@@ -9,8 +9,8 @@ date: 2011-08-29 03:23:19.000000000 +03:00
 ---
 I'm using the collectiveidea fork of <a href="http://github.com/collectiveidea/delayed_job" target="_blank">DelayedJob</a>. There are two ways to create a DelayedJob record. First you can use the <code>delay</code> method.
 
-[gist id=1177431 file=dj_delay.rb]
+<script src="https://gist.github.com/1177431.js?file=dj_delay.rb"></script>
 
 Second way to create DelayedJob records is custom jobs.
 
-[gist id=1177431 file=dj_custom_job.rb]
+<script src="https://gist.github.com/1177431.js?file=dj_custom_job.rb"></script>

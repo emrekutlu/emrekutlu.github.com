@@ -9,11 +9,11 @@ date: 2008-08-24 17:52:36.000000000 +03:00
 ---
 <br />
 <pre lang="html4strict" colla="+">
-<body>
-   <div id='main'>
+&lt;body&gt;
+   &lt;div id='main'&gt;
       Main Div
-   </div>
-</body>
+   &lt;/div&gt;
+&lt;/body&gt;
 </pre>
 <br />
 <pre lang="ruby" colla="+">

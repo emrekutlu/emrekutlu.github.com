@@ -12,7 +12,7 @@ If you have been hacking ruby for a while you should have heard that "Everything
 
 My ruby version 1.9.2.
 
-[gist id=1009449 file=ruby_version.bash]
+<script src="https://gist.github.com/1009449.js?file=ruby_version.bash"></script>
 
 First I'm going to show you how to add methods to instances by using <code><strong>define_method</strong></code>.
 
