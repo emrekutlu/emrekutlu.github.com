@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Railstic</title>
+  <title>Dynamically Defining Methods with define_method - Railstic</title>
   <meta name="author" content="İ. Emre Kutlu">
 
   
-  <meta name="description" content="Blog Archive 2011 Check Existence of DelayedJob Records
-Aug 29 2011 Dynamically Defining Methods with define_method
-Jun 11 2011 2009 Nested Object &hellip;">
+  <meta name="description" content="If you have been hacking ruby for a while you should have heard that &#8220;Everything is an object&#8221;. To understand this concept knowing what a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ Jun 11 2011 2009 Nested Object &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://emrekutlu.github.com/blog/archives/">
+  <link rel="canonical" href="http://emrekutlu.github.com/2011/06/dynamically-defining-methods-with-define_method/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -77,107 +75,119 @@ Jun 11 2011 2009 Nested Object &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Dynamically Defining Methods With Define_method</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-11T02:08:08+03:00" pubdate data-updated="true">Jun 11<span>th</span>, 2011</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>If you have been hacking ruby for a while you should have heard that &#8220;Everything is an object&#8221;. To understand this concept knowing what a <strong>singleton class</strong> is important. <a href="http://yehudakatz.com/2009/11/15/metaprogramming-in-ruby-its-all-about-the-self/" target="_blank">Yehuda Katz&#8217;s post</a> is a good source for it.</p>
 
-  
-  <h2>2011</h2>
+<p>My ruby version 1.9.2.</p>
 
-<article>
-  
-<h1><a href="/2011/08/check-existence-of-delayedjob-records/">Check Existence of DelayedJob Records</a></h1>
-<time datetime="2011-08-29T03:23:19+03:00" pubdate><span class='month'>Aug</span> <span class='day'>29</span> <span class='year'>2011</span></time>
+<script src="https://gist.github.com/1009449.js?file=ruby_version.bash"></script>
 
 
-</article>
+<p>First I&#8217;m going to show you how to add methods to instances by using <code><strong>define_method</strong></code>.</p>
+
+<script src="https://gist.github.com/1009449.js?file=add_instance_methods.rb"></script>
 
 
+<p>You can also write an instance method to create instance methods. <code><strong>send</strong></code> must be used because <code><strong>define_method</strong></code> is private.</p>
 
-<article>
-  
-<h1><a href="/2011/06/dynamically-defining-methods-with-define_method/">Dynamically Defining Methods with define_method</a></h1>
-<time datetime="2011-06-11T02:08:08+03:00" pubdate><span class='month'>Jun</span> <span class='day'>11</span> <span class='year'>2011</span></time>
+<script src="https://gist.github.com/1009449.js?file=add_instance_methods_by_instance_method.rb"></script>
 
 
-</article>
+<p>Write a singleton method to create instance methods.</p>
+
+<script src="https://gist.github.com/1009449.js?file=add_instance_methods_by_singleton_method.rb"></script>
 
 
+<p>Now it is time to add singleton methods. When we call <code><strong>define_method</strong></code>, it creates an instance method. What we have to do is call <code><strong>define_method</strong></code> on class&#8217; singleton class.</p>
 
-  
-  <h2>2009</h2>
+<p>Getting singleton class of a class:</p>
 
-<article>
-  
-<h1><a href="/2009/06/nested-object-forms-with-has_one-relation/">Nested Object Forms with has_one Relation</a></h1>
-<time datetime="2009-06-15T15:40:30+03:00" pubdate><span class='month'>Jun</span> <span class='day'>15</span> <span class='year'>2009</span></time>
+<script src="https://gist.github.com/1009449.js?file=get_singleton_class.rb"></script>
 
 
-</article>
+<p>First defining singleton method to create singleton methods.</p>
+
+<script src="https://gist.github.com/1009449.js?file=add_singleton_methods_by_singleton_method.rb"></script>
 
 
+<p>Then defining instance method to create singleton methods.</p>
 
-<article>
-  
-<h1><a href="/2009/01/tidbit-converting-strings-with-line-feed-to-array/">Tidbit: Converting Strings with Line Feed to Array</a></h1>
-<time datetime="2009-01-21T10:08:02+02:00" pubdate><span class='month'>Jan</span> <span class='day'>21</span> <span class='year'>2009</span></time>
-
-
-</article>
-
-
-
-  
-  <h2>2008</h2>
-
-<article>
-  
-<h1><a href="/2008/12/rails-22-inflector/">Rails 2.2 &amp; Inflector</a></h1>
-<time datetime="2008-12-14T22:14:52+02:00" pubdate><span class='month'>Dec</span> <span class='day'>14</span> <span class='year'>2008</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/2008/08/updating-rubygems-to-12-manually/">Updating RubyGems to 1.2 (Manually)</a></h1>
-<time datetime="2008-08-27T12:34:50+03:00" pubdate><span class='month'>Aug</span> <span class='day'>27</span> <span class='year'>2008</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/2008/08/recursive-methods-with-block/">Recursive methods with block in Ruby</a></h1>
-<time datetime="2008-08-26T10:46:17+03:00" pubdate><span class='month'>Aug</span> <span class='day'>26</span> <span class='year'>2008</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/2008/08/how-to-check-if-a-div-exists-in-rjs/">How to check if a div exists in rjs?</a></h1>
-<time datetime="2008-08-24T17:52:36+03:00" pubdate><span class='month'>Aug</span> <span class='day'>24</span> <span class='year'>2008</span></time>
-
-
-</article>
+<script src="https://gist.github.com/1009449.js?file=add_singleton_methods_by_instance_method.rb"></script>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">İ. Emre Kutlu</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-11T02:08:08+03:00" pubdate data-updated="true">Jun 11<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://emrekutlu.github.com/2011/06/dynamically-defining-methods-with-define_method/" data-via="iekutlu" data-counturl="http://emrekutlu.github.com/2011/06/dynamically-defining-methods-with-define_method/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2009/06/nested-object-forms-with-has_one-relation/" title="Previous Post: Nested Object Forms with has_one Relation">&laquo; Nested Object Forms with has_one Relation</a>
+      
+      
+        <a class="basic-alignment right" href="/2011/08/check-existence-of-delayedjob-records/" title="Next Post: Check Existence of DelayedJob Records">Check Existence of DelayedJob Records &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>

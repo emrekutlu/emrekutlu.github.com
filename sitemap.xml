@@ -1,11 +1,47 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://emrekutlu.github.com/2008/08/how-to-check-if-a-div-exists-in-rjs/</loc>
+        <lastmod>2012-08-20T19:19:29+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://emrekutlu.github.com/2008/08/recursive-methods-with-block/</loc>
+        <lastmod>2012-08-20T17:34:50+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://emrekutlu.github.com/2008/08/updating-rubygems-to-12-manually/</loc>
+        <lastmod>2012-08-20T17:34:50+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://emrekutlu.github.com/2008/12/rails-22-inflector/</loc>
+        <lastmod>2012-08-20T17:34:50+03:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://emrekutlu.github.com/2009/01/tidbit-converting-strings-with-line-feed-to-array/
+        </loc>
+        <lastmod>2012-08-20T17:34:50+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://emrekutlu.github.com/2009/06/nested-object-forms-with-has_one-relation/</loc>
+        <lastmod>2012-08-20T17:34:50+03:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://emrekutlu.github.com/2011/06/dynamically-defining-methods-with-define_method/
+        </loc>
+        <lastmod>2012-08-20T19:03:30+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://emrekutlu.github.com/2011/08/check-existence-of-delayedjob-records/</loc>
+        <lastmod>2012-08-20T18:59:52+03:00</lastmod>
+    </url>
+    <url>
         <loc>http://emrekutlu.github.com/blog/archives/</loc>
-        <lastmod>2012-08-20T16:31:45+03:00</lastmod>
+        <lastmod>2012-08-20T19:19:29+03:00</lastmod>
     </url>
     <url>
         <loc>http://emrekutlu.github.com/</loc>
-        <lastmod>2012-08-20T16:31:45+03:00</lastmod>
+        <lastmod>2012-08-20T19:19:29+03:00</lastmod>
     </url>
 </urlset>

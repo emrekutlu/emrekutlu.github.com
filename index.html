@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>Railstic</title>
+  <meta name="author" content="İ. Emre Kutlu">
 
   
-  <meta name="description" content=" Blog Archives Recent Posts ">
+  <meta name="description" content="I&#8217;m using the collectiveidea fork of DelayedJob. There are two ways to create a DelayedJob record. First you can use the delay method. Second &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,20 +24,32 @@
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="Railstic" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-5561521-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
+  <h1><a href="/">Railstic</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>sharing experiences</h2>
   
 </hgroup>
 
@@ -65,6 +77,524 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2011/08/check-existence-of-delayedjob-records/">Check Existence of DelayedJob Records</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-29T03:23:19+03:00" pubdate data-updated="true">Aug 29<span>th</span>, 2011</time>
+        
+         | <a href="/2011/08/check-existence-of-delayedjob-records/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&#8217;m using the collectiveidea fork of <a href="http://github.com/collectiveidea/delayed_job" target="_blank">DelayedJob</a>. There are two ways to create a DelayedJob record. First you can use the <code>delay</code> method.</p>
+
+<script src="https://gist.github.com/1177431.js?file=dj_delay.rb"></script>
+
+
+<p>Second way to create DelayedJob records is custom jobs.</p>
+
+<script src="https://gist.github.com/1177431.js?file=dj_custom_job.rb"></script>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2011/06/dynamically-defining-methods-with-define_method/">Dynamically Defining Methods With Define_method</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-11T02:08:08+03:00" pubdate data-updated="true">Jun 11<span>th</span>, 2011</time>
+        
+         | <a href="/2011/06/dynamically-defining-methods-with-define_method/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you have been hacking ruby for a while you should have heard that &#8220;Everything is an object&#8221;. To understand this concept knowing what a <strong>singleton class</strong> is important. <a href="http://yehudakatz.com/2009/11/15/metaprogramming-in-ruby-its-all-about-the-self/" target="_blank">Yehuda Katz&#8217;s post</a> is a good source for it.</p>
+
+<p>My ruby version 1.9.2.</p>
+
+<script src="https://gist.github.com/1009449.js?file=ruby_version.bash"></script>
+
+
+<p>First I&#8217;m going to show you how to add methods to instances by using <code><strong>define_method</strong></code>.</p>
+
+<script src="https://gist.github.com/1009449.js?file=add_instance_methods.rb"></script>
+
+
+<p>You can also write an instance method to create instance methods. <code><strong>send</strong></code> must be used because <code><strong>define_method</strong></code> is private.</p>
+
+<script src="https://gist.github.com/1009449.js?file=add_instance_methods_by_instance_method.rb"></script>
+
+
+<p>Write a singleton method to create instance methods.</p>
+
+<script src="https://gist.github.com/1009449.js?file=add_instance_methods_by_singleton_method.rb"></script>
+
+
+<p>Now it is time to add singleton methods. When we call <code><strong>define_method</strong></code>, it creates an instance method. What we have to do is call <code><strong>define_method</strong></code> on class&#8217; singleton class.</p>
+
+<p>Getting singleton class of a class:</p>
+
+<script src="https://gist.github.com/1009449.js?file=get_singleton_class.rb"></script>
+
+
+<p>First defining singleton method to create singleton methods.</p>
+
+<script src="https://gist.github.com/1009449.js?file=add_singleton_methods_by_singleton_method.rb"></script>
+
+
+<p>Then defining instance method to create singleton methods.</p>
+
+<script src="https://gist.github.com/1009449.js?file=add_singleton_methods_by_instance_method.rb"></script>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2009/06/nested-object-forms-with-has_one-relation/">Nested Object Forms With Has_one Relation</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-15T15:40:30+03:00" pubdate data-updated="true">Jun 15<span>th</span>, 2009</time>
+        
+         | <a href="/2009/06/nested-object-forms-with-has_one-relation/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Rails 2.3 has a good solution for multi model forms. But there is not much examples of  how to use<code> <strong>accepts_nested_attributes_for</strong></code> with <code><strong>has_one</strong></code> relation.</p>
+
+<p>Assume that we have a Book model which has one Author.</p>
+
+<script src="http://snipt.net/embed/821f03288846297c2cf43c34766a38f7" type="text/javascript"><!--mce:0--></script>
+
+
+<br />
+
+
+<script src="http://snipt.net/embed/02bd92faa38aaa6cc0ea75e59937a1ef" type="text/javascript"><!--mce:1--></script>
+
+
+<br />
+
+
+<p>Controller :<script src="http://snipt.net/embed/f0ef6bf2d1b0bc59796999ff717bf149" type="text/javascript"><!--mce:2--></script></p>
+
+<br />
+
+
+<p>View:</p>
+
+<script src="http://snipt.net/embed/2b2d98bcfa219f53623aa6c1f1301a01" type="text/javascript"><!--mce:3--></script>
+
+
+<br />
+
+
+<p>No special action is needed for <strong><code>create</code></strong> method of BooksController,  <strong>attr_accessible</strong> is not necessary for Book model. Just don&#8217;t forget to add the second parameter (<strong><code>@book</code></strong>) of <strong><code>form_for</code></strong> and build your nested object (@book.build_author).</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2009/01/tidbit-converting-strings-with-line-feed-to-array/">Tidbit: Converting Strings With Line Feed to Array</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-01-21T10:08:02+02:00" pubdate data-updated="true">Jan 21<span>st</span>, 2009</time>
+        
+         | <a href="/2009/01/tidbit-converting-strings-with-line-feed-to-array/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you have trouble when converting string to array, check if your string includes any line feed (\n). Check how <code>Array("string")</code> behaves:</p>
+
+<pre lang="bash">irb(main):001:0> Array("izzet emre \nkutlu")
+=> ["izzet emre \n", "kutlu"]
+</pre>
+
+
+<p>This output is not what most of the people expected. Be careful!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/12/rails-22-inflector/">Rails 2.2 &amp; Inflector</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-14T22:14:52+02:00" pubdate data-updated="true">Dec 14<span>th</span>, 2008</time>
+        
+         | <a href="/2008/12/rails-22-inflector/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you have recently updated to Rails 2.2.2, you may encounter this error when you want to start your application:</p>
+
+<pre lang="bash">/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:445:in
+`load_missing_constant': uninitialized constant Inflector (NameError)</pre>
+
+
+<p>As I learned from <a href="http://paulsturgess.co.uk/articles/show/76-load_missing_constant-uninitialized-constant-inflector-when-upgrading-to-ruby-on-rails-222" target="_blank">Paul&#8217;s post</a> usage of <code>Inflector</code> class is changed a bit. You can see the difference when you compare the inflections.rb files. Path of the file is <em>yourApp/config/initializers/inflections.rb</em></p>
+
+<p>inflections.rb (Rails 2.1.0)</p>
+
+<pre lang="ruby"> Inflector.inflections do |inflect|
+  .
+  .
+  .
+ end</pre>
+
+
+<p>inflections.rb (Rails 2.2.2)</p>
+
+<pre lang="ruby"> ActiveSupport::Inflector.inflections do |inflect|
+  .
+  .
+  .
+ end</pre>
+
+
+<p>In my situation changing <code>Inflector</code> to <code>ActiveSupport::Inflector</code> was enough to solve the problem.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/08/updating-rubygems-to-12-manually/">Updating RubyGems to 1.2 (Manually)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-27T12:34:50+03:00" pubdate data-updated="true">Aug 27<span>th</span>, 2008</time>
+        
+         | <a href="/2008/08/updating-rubygems-to-12-manually/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><br />
+
+
+<p>This is what happened when I want to install rmagick gem.</p>
+
+<br />
+
+
+<pre lang="bash" colla="+">
+username@username-desktop:~$ sudo gem install rmagick
+Bulk updating Gem source index for: http://gems.rubyforge.org/
+ERROR:  could not find rmagick locally or in a repository
+</pre>
+
+
+<br />
+
+
+<p>What the hell&#8230;
+After some googling I found that RubGems 1.1.x is buggy and and update to RubyGems 1.2 is necessary.
+To learn your RubyGems version:</p>
+
+<br />
+
+
+<pre lang="bash" colla="+">
+username@username-desktop:~$ gem -v
+1.1.0
+</pre>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2008/08/updating-rubygems-to-12-manually/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/08/recursive-methods-with-block/">Recursive Methods With Block in Ruby</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-26T10:46:17+03:00" pubdate data-updated="true">Aug 26<span>th</span>, 2008</time>
+        
+         | <a href="/2008/08/recursive-methods-with-block/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><br />
+
+
+<pre lang="ruby" colla="+">
+def comic(cast)
+   cast.each do |character|
+      unless character.is_a?(Array)
+         yield(character)
+      else
+     comic(character) {|x| yield x}
+      end
+   end
+end
+</pre>
+
+
+<br />
+
+
+<p>This method takes an array as argument and checks each element if it is an <em>Array</em>.
+If the element is not an <em>Array</em> then the block is called.
+If the element is an <em>Array</em> then the same method is called with that element as an argument and with the same block.</p>
+
+<br />
+
+
+<p>Now let&#8217;s look how we can call this method.</p>
+
+<pre lang="ruby" colla="+">
+names = ['lucky luke', 'jolly jumper', 'rin tin tin', ['joe', 'william','jack', 'averell']]
+comic(names) {|c| puts c}
+</pre>
+
+
+<br />
+
+
+<p><strong>Output :</strong></p>
+
+<pre lang="bash">
+lucky luke
+jolly jumper
+rin tin tin
+joe
+william
+jack
+averell
+</pre>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/08/how-to-check-if-a-div-exists-in-rjs/">How to Check if a Div Exists in Rjs?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-24T17:52:36+03:00" pubdate data-updated="true">Aug 24<span>th</span>, 2008</time>
+        
+         | <a href="/2008/08/how-to-check-if-a-div-exists-in-rjs/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><br />
+
+
+<pre lang="html4strict" colla="+">
+&lt;body&gt;
+   &lt;div id='main'&gt;
+      Main Div
+   &lt;/div&gt;
+&lt;/body&gt;
+</pre>
+
+
+<br />
+
+
+<pre lang="ruby" colla="+">
+render :update do |page|
+   page << "if ($('main')){"
+   page.replace_html 'main', :inline => 'Here it is'
+   page << "}"
+end
+</pre>
+
+
+<p>This ruby code checks if there is a DOM object that its id = &#8220;main&#8221;.
+If there is then changes its content to &#8220;Here it is&#8221;, if there is not do nothing.</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -77,9 +607,45 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
+      <li class="post">
+        <a href="/2011/08/check-existence-of-delayedjob-records/">Check Existence of DelayedJob Records</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/dynamically-defining-methods-with-define_method/">Dynamically Defining Methods with define_method</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2009/06/nested-object-forms-with-has_one-relation/">Nested Object Forms with has_one Relation</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2009/01/tidbit-converting-strings-with-line-feed-to-array/">Tidbit: Converting Strings with Line Feed to Array</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2008/12/rails-22-inflector/">Rails 2.2 &amp; Inflector</a>
+      </li>
+    
   </ul>
 </section>
 
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("iekutlu", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/iekutlu" class="twitter-follow-button" data-show-count="false">Follow @iekutlu</a>
+  
+</section>
 
 
 
@@ -91,12 +657,25 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - Your Name -
+  Copyright &copy; 2012 - İ. Emre Kutlu -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'railstic';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
