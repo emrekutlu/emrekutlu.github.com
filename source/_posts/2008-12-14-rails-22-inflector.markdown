@@ -6,6 +6,7 @@ wordpress_id: 92
 wordpress_url: !binary |-
   aHR0cDovL2l6emV0ZW1yZWt1dGx1LmNvbS9ibG9nLz9wPTky
 date: 2008-12-14 22:14:52.000000000 +02:00
+comments: true
 ---
 If you have recently updated to Rails 2.2.2, you may encounter this error when you want to start your application:
 <pre lang="bash">/.gem/ruby/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:445:in

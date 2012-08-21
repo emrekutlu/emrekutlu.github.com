@@ -7,6 +7,7 @@ wordpress_id: 190
 wordpress_url: !binary |-
   aHR0cDovL3JhaWxzdGljLmNvbS8/cD0xOTA=
 date: 2011-06-11 02:08:08.000000000 +03:00
+comments: true
 ---
 If you have been hacking ruby for a while you should have heard that "Everything is an object". To understand this concept knowing what a <strong>singleton class</strong> is important. <a href="http://yehudakatz.com/2009/11/15/metaprogramming-in-ruby-its-all-about-the-self/" target="_blank">Yehuda Katz's post</a> is a good source for it.
 

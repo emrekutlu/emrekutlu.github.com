@@ -6,6 +6,7 @@ wordpress_id: 172
 wordpress_url: !binary |-
   aHR0cDovL2l6emV0ZW1yZWt1dGx1LmNvbS9ibG9nLz9wPTM=
 date: 2008-08-24 17:52:36.000000000 +03:00
+comments: true
 ---
 <br />
 <pre lang="html4strict" colla="+">

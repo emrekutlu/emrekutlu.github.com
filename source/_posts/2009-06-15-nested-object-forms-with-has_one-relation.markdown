@@ -6,6 +6,7 @@ wordpress_id: 138
 wordpress_url: !binary |-
   aHR0cDovL3JhaWxzdGljLmNvbS8/cD0xMzg=
 date: 2009-06-15 15:40:30.000000000 +03:00
+comments: true
 ---
 Rails 2.3 has a good solution for multi model forms. But there is not much examples of  how to use<code> <strong>accepts_nested_attributes_for</strong></code> with <code><strong>has_one</strong></code> relation.
 

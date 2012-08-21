@@ -6,6 +6,7 @@ wordpress_id: 45
 wordpress_url: !binary |-
   aHR0cDovL2l6emV0ZW1yZWt1dGx1LmNvbS9ibG9nLz9wPTQ1
 date: 2008-08-27 12:34:50.000000000 +03:00
+comments: true
 ---
 <br />
 This is what happened when I want to install rmagick gem.
