@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Check Existence of DelayedJob Records - Railstic</title>
+  <title>Railstic</title>
   <meta name="author" content="İ. Emre Kutlu">
 
   
-  <meta name="description" content="I&#8217;m using the collectiveidea fork of DelayedJob. There are two ways to create a DelayedJob record. First you can use the delay method. Second &hellip;">
+  <meta name="description" content="This is what happened when I want to install rmagick gem. username@username-desktop:~$ sudo gem install rmagick
+Bulk updating Gem source index for: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://emrekutlu.github.com/2011/08/check-existence-of-delayedjob-records/">
+  <link rel="canonical" href="http://emrekutlu.github.com/blog/page/2/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -74,12 +75,15 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">Check Existence of DelayedJob Records</h1>
+      <h1 class="entry-title"><a href="/2008/08/updating-rubygems-to-12-manually/">Updating RubyGems to 1.2 (Manually)</a></h1>
     
     
       <p class="meta">
@@ -95,78 +99,214 @@
   
 
 
-<time datetime="2011-08-29T03:23:19+03:00" pubdate data-updated="true">Aug 29<span>th</span>, 2011</time>
+<time datetime="2008-08-27T12:34:50+03:00" pubdate data-updated="true">Aug 27<span>th</span>, 2008</time>
         
-         | <a href="#disqus_thread">Comments</a>
+         | <a href="/2008/08/updating-rubygems-to-12-manually/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I&#8217;m using the collectiveidea fork of <a href="http://github.com/collectiveidea/delayed_job" target="_blank">DelayedJob</a>. There are two ways to create a DelayedJob record. First you can use the <code>delay</code> method.</p>
-
-<script src="https://gist.github.com/1177431.js?file=dj_delay.rb"></script>
+  <div class="entry-content"><br />
 
 
-<p>Second way to create DelayedJob records is custom jobs.</p>
+<p>This is what happened when I want to install rmagick gem.</p>
 
-<script src="https://gist.github.com/1177431.js?file=dj_custom_job.rb"></script>
+<br />
+
+
+<pre lang="bash" colla="+">
+username@username-desktop:~$ sudo gem install rmagick
+Bulk updating Gem source index for: http://gems.rubyforge.org/
+ERROR:  could not find rmagick locally or in a repository
+</pre>
+
+
+<br />
+
+
+<p>What the hell&#8230;
+After some googling I found that RubGems 1.1.x is buggy and and update to RubyGems 1.2 is necessary.
+To learn your RubyGems version:</p>
+
+<br />
+
+
+<pre lang="bash" colla="+">
+username@username-desktop:~$ gem -v
+1.1.0
+</pre>
+
 
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">İ. Emre Kutlu</span></span>
-
-      
-
-
-
-
-
-
-
-
+  
+    <footer>
+      <a rel="full-article" href="/2008/08/updating-rubygems-to-12-manually/">Read on &rarr;</a>
+    </footer>
   
 
 
-<time datetime="2011-08-29T03:23:19+03:00" pubdate data-updated="true">Aug 29<span>th</span>, 2011</time>
+    </article>
+  
+  
+    <article>
       
-
-
-    </p>
+  <header>
     
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://emrekutlu.github.com/2011/08/check-existence-of-delayedjob-records/" data-via="iekutlu" data-counturl="http://emrekutlu.github.com/2011/08/check-existence-of-delayedjob-records/" >Tweet</a>
-  
-  
-  
-</div>
-
+      <h1 class="entry-title"><a href="/2008/08/recursive-methods-with-block/">Recursive methods with block in Ruby</a></h1>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/2011/06/dynamically-defining-methods-with-define_method/" title="Previous Post: Dynamically Defining Methods with define_method">&laquo; Dynamically Defining Methods with define_method</a>
-      
-      
-    </p>
-  </footer>
-</article>
+    
+      <p class="meta">
+        
 
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-26T10:46:17+03:00" pubdate data-updated="true">Aug 26<span>th</span>, 2008</time>
+        
+         | <a href="/2008/08/recursive-methods-with-block/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><br />
+
+
+<pre lang="ruby" colla="+">
+def comic(cast)
+   cast.each do |character|
+      unless character.is_a?(Array)
+         yield(character)
+      else
+     comic(character) {|x| yield x}
+      end
+   end
+end
+</pre>
+
+
+<br />
+
+
+<p>This method takes an array as argument and checks each element if it is an <em>Array</em>.
+If the element is not an <em>Array</em> then the block is called.
+If the element is an <em>Array</em> then the same method is called with that element as an argument and with the same block.</p>
+
+<br />
+
+
+<p>Now let&#8217;s look how we can call this method.</p>
+
+<pre lang="ruby" colla="+">
+names = ['lucky luke', 'jolly jumper', 'rin tin tin', ['joe', 'william','jack', 'averell']]
+comic(names) {|c| puts c}
+</pre>
+
+
+<br />
+
+
+<p><strong>Output :</strong></p>
+
+<pre lang="bash">
+lucky luke
+jolly jumper
+rin tin tin
+joe
+william
+jack
+averell
+</pre>
+
 </div>
-  </section>
+  
+  
 
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/08/how-to-check-if-a-div-exists-in-rjs/">How to check if a div exists in rjs?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-24T17:52:36+03:00" pubdate data-updated="true">Aug 24<span>th</span>, 2008</time>
+        
+         | <a href="/2008/08/how-to-check-if-a-div-exists-in-rjs/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><br />
+
+
+<pre lang="html4strict" colla="+">
+&lt;body&gt;
+   &lt;div id='main'&gt;
+      Main Div
+   &lt;/div&gt;
+&lt;/body&gt;
+</pre>
+
+
+<br />
+
+
+<pre lang="ruby" colla="+">
+render :update do |page|
+   page << "if ($('main')){"
+   page.replace_html 'main', :inline => 'Here it is'
+   page << "}"
+end
+</pre>
+
+
+<p>This ruby code checks if there is a DOM object that its id = &#8220;main&#8221;.
+If there is then changes its content to &#8220;Here it is&#8221;, if there is not do nothing.</p>
 </div>
+  
+  
 
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/">Newer &rarr;</a>
+    
+  </div>
+</div>
 <aside class="sidebar">
   
     <section>
@@ -200,7 +340,7 @@
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating...</li>
+    <li class="loading">Status updating&#8230;</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -220,7 +360,6 @@
   
 </aside>
 
-
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -235,10 +374,7 @@
       var disqus_shortname = 'railstic';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://emrekutlu.github.com/2011/08/check-existence-of-delayedjob-records/';
-        var disqus_url = 'http://emrekutlu.github.com/2011/08/check-existence-of-delayedjob-records/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

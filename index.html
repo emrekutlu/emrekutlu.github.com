@@ -128,7 +128,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/2011/06/dynamically-defining-methods-with-define_method/">Dynamically Defining Methods With Define_method</a></h1>
+      <h1 class="entry-title"><a href="/2011/06/dynamically-defining-methods-with-define_method/">Dynamically Defining Methods with define_method</a></h1>
     
     
       <p class="meta">
@@ -203,7 +203,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/2009/06/nested-object-forms-with-has_one-relation/">Nested Object Forms With Has_one Relation</a></h1>
+      <h1 class="entry-title"><a href="/2009/06/nested-object-forms-with-has_one-relation/">Nested Object Forms with has_one Relation</a></h1>
     
     
       <p class="meta">
@@ -270,7 +270,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/2009/01/tidbit-converting-strings-with-line-feed-to-array/">Tidbit: Converting Strings With Line Feed to Array</a></h1>
+      <h1 class="entry-title"><a href="/2009/01/tidbit-converting-strings-with-line-feed-to-array/">Tidbit: Converting Strings with Line Feed to Array</a></h1>
     
     
       <p class="meta">
@@ -374,228 +374,9 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2008/08/updating-rubygems-to-12-manually/">Updating RubyGems to 1.2 (Manually)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-08-27T12:34:50+03:00" pubdate data-updated="true">Aug 27<span>th</span>, 2008</time>
-        
-         | <a href="/2008/08/updating-rubygems-to-12-manually/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><br />
-
-
-<p>This is what happened when I want to install rmagick gem.</p>
-
-<br />
-
-
-<pre lang="bash" colla="+">
-username@username-desktop:~$ sudo gem install rmagick
-Bulk updating Gem source index for: http://gems.rubyforge.org/
-ERROR:  could not find rmagick locally or in a repository
-</pre>
-
-
-<br />
-
-
-<p>What the hell&#8230;
-After some googling I found that RubGems 1.1.x is buggy and and update to RubyGems 1.2 is necessary.
-To learn your RubyGems version:</p>
-
-<br />
-
-
-<pre lang="bash" colla="+">
-username@username-desktop:~$ gem -v
-1.1.0
-</pre>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/2008/08/updating-rubygems-to-12-manually/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2008/08/recursive-methods-with-block/">Recursive Methods With Block in Ruby</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-08-26T10:46:17+03:00" pubdate data-updated="true">Aug 26<span>th</span>, 2008</time>
-        
-         | <a href="/2008/08/recursive-methods-with-block/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><br />
-
-
-<pre lang="ruby" colla="+">
-def comic(cast)
-   cast.each do |character|
-      unless character.is_a?(Array)
-         yield(character)
-      else
-     comic(character) {|x| yield x}
-      end
-   end
-end
-</pre>
-
-
-<br />
-
-
-<p>This method takes an array as argument and checks each element if it is an <em>Array</em>.
-If the element is not an <em>Array</em> then the block is called.
-If the element is an <em>Array</em> then the same method is called with that element as an argument and with the same block.</p>
-
-<br />
-
-
-<p>Now let&#8217;s look how we can call this method.</p>
-
-<pre lang="ruby" colla="+">
-names = ['lucky luke', 'jolly jumper', 'rin tin tin', ['joe', 'william','jack', 'averell']]
-comic(names) {|c| puts c}
-</pre>
-
-
-<br />
-
-
-<p><strong>Output :</strong></p>
-
-<pre lang="bash">
-lucky luke
-jolly jumper
-rin tin tin
-joe
-william
-jack
-averell
-</pre>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2008/08/how-to-check-if-a-div-exists-in-rjs/">How to Check if a Div Exists in Rjs?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-08-24T17:52:36+03:00" pubdate data-updated="true">Aug 24<span>th</span>, 2008</time>
-        
-         | <a href="/2008/08/how-to-check-if-a-div-exists-in-rjs/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><br />
-
-
-<pre lang="html4strict" colla="+">
-&lt;body&gt;
-   &lt;div id='main'&gt;
-      Main Div
-   &lt;/div&gt;
-&lt;/body&gt;
-</pre>
-
-
-<br />
-
-
-<pre lang="ruby" colla="+">
-render :update do |page|
-   page << "if ($('main')){"
-   page.replace_html 'main', :inline => 'Here it is'
-   page << "}"
-end
-</pre>
-
-
-<p>This ruby code checks if there is a DOM object that its id = &#8220;main&#8221;.
-If there is then changes its content to &#8220;Here it is&#8221;, if there is not do nothing.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -630,6 +411,22 @@ If there is then changes its content to &#8220;Here it is&#8221;, if there is no
   </ul>
 </section>
 
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("iekutlu", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/iekutlu" class="twitter-follow-button" data-show-count="false">Follow @iekutlu</a>
+  
+</section>
 
 
 
